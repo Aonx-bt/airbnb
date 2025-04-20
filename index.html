@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone: Holiday Rentals, Cabins, Beach Houses & More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Top Navigation Row -->
+            <div class="top-nav">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="airbnb.png" alt="Airbnb">
+                </div>
+
+                <!-- Main Navigation -->
+                <div class="main-nav">
+                    <button class="nav-button active">Homes</button>
+                    <button class="nav-button">Experiences</button>
+                </div>
+
+                <!-- Right Navigation -->
+                <div class="right-nav">
+                    <a href="#" class="host-link">Airbnb your home</a>
+                    <button class="globe-btn"><i class="fas fa-globe"></i></button>
+                    <div class="profile-menu">
+                        <button class="menu-btn">
+                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Bar Row -->
+            <div class="search-row">
+                <!-- Search Bar -->
+                <div class="search-wrapper">
+                    <!-- Expanded Search Bar -->
+                    <div class="search-bar expanded">
+                        <div class="search-item location">
+                            <div class="search-label">Where</div>
+                            <input type="text" placeholder="Search destinations">
+                        </div>
+                        <div class="search-divider"></div>
+                        <div class="search-item check-in">
+                            <div class="search-label">Check in</div>
+                            <div class="search-text">Add dates</div>
+                        </div>
+                        <div class="search-divider"></div>
+                        <div class="search-item check-out">
+                            <div class="search-label">Check out</div>
+                            <div class="search-text">Add dates</div>
+                        </div>
+                        <div class="search-divider"></div>
+                        <div class="search-item guests">
+                            <div class="search-label">Who</div>
+                            <div class="search-text">Add guests</div>
+                        </div>
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <!-- Collapsed Search Bar -->
+                    <div class="search-bar collapsed">
+                        <div class="collapsed-content">
+                            <div class="search-anywhere">Anywhere</div>
+                            <div class="search-divider"></div>
+                            <div class="search-week">Any week</div>
+                            <div class="search-divider"></div>
+                            <div class="search-guests">Add guests</div>
+                            <button class="search-button-small">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Categories Navigation -->
+    <div class="categories-nav">
+        <div class="categories-container">
+            <div class="categories-scroll">
+                <button class="category-item active">
+                    <div class="category-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <span>Amazing pools</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <span>Icons</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <span>Farms</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-surprise"></i>
+                    </div>
+                    <span>OMG!</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <span>Mansions</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <span>Design</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <span>Amazing views</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <span>Beachfront</span>
+                </button>
+                <button class="category-item">
+                    <div class="category-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <span>Lakefront</span>
+                </button>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button class="nav-scroll-button next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Filters Button -->
+            <button class="filters-button">
+                <i class="fas fa-sliders-h"></i>
+                <span>Filters</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Listings Grid -->
+        <section class="listings-grid">
+            <!-- Listing Cards -->
+            <div class="listing-card">
+                <div class="listing-images">
+                    <div class="guest-favorite">
+                        <i class="fas fa-heart"></i>
+                        Guest favorite
+                    </div>
+                    <img src="listing1.jpeg" alt="Luxury Villa">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Luxury Villa</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.98</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">2 miles away</p>
+                    <p class="listing-dates">Jan 15-20</p>
+                    <p class="listing-price"><strong>$250</strong> night</p>
+                    
+                    <!-- Split with Friends Button -->
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(1)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <!-- Cost Splitting Calculator (Hidden by default) -->
+                    <div class="cost-split-calculator" id="split-calc-1">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-1">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-1')" class="minus">-</button>
+                                    <input type="number" id="nights-1" value="1" min="1" onchange="calculateSplit(1)">
+                                    <button onclick="incrementValue('nights-1')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-1">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-1')" class="minus">-</button>
+                                    <input type="number" id="friends-1" value="2" min="1" onchange="calculateSplit(1)">
+                                    <button onclick="incrementValue('friends-1')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-1">$125.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more listing cards with unique IDs -->
+            <div class="listing-card">
+                <!-- Similar structure for other cards -->
+                <div class="listing-images">
+                    <img src="listing2.jpeg" alt="Beach House">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Beach House</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.92</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">Oceanfront</p>
+                    <p class="listing-dates">Feb 1-7</p>
+                    <p class="listing-price"><strong>$350</strong> night</p>
+                    
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(2)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <div class="cost-split-calculator" id="split-calc-2">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-2">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-2')" class="minus">-</button>
+                                    <input type="number" id="nights-2" value="1" min="1" onchange="calculateSplit(2)">
+                                    <button onclick="incrementValue('nights-2')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-2">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-2')" class="minus">-</button>
+                                    <input type="number" id="friends-2" value="2" min="1" onchange="calculateSplit(2)">
+                                    <button onclick="incrementValue('friends-2')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-2">$175.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more listing cards -->
+            <div class="listing-card">
+                <div class="listing-images">
+                    <img src="listing3.jpeg" alt="Mountain Retreat">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Mountain Retreat</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.89</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">Mountain view</p>
+                    <p class="listing-dates">Mar 15-20</p>
+                    <p class="listing-price"><strong>$275</strong> night</p>
+                    
+                    <!-- Split with Friends Button -->
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(3)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <!-- Cost Splitting Calculator (Hidden by default) -->
+                    <div class="cost-split-calculator" id="split-calc-3">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-3">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-3')" class="minus">-</button>
+                                    <input type="number" id="nights-3" value="1" min="1" onchange="calculateSplit(3)">
+                                    <button onclick="incrementValue('nights-3')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-3">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-3')" class="minus">-</button>
+                                    <input type="number" id="friends-3" value="2" min="1" onchange="calculateSplit(3)">
+                                    <button onclick="incrementValue('friends-3')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-3">$137.50</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card">
+                <div class="listing-images">
+                    <img src="listing4.jpeg" alt="Desert Oasis">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Desert Oasis</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.95</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">Desert view</p>
+                    <p class="listing-dates">Apr 1-6</p>
+                    <p class="listing-price"><strong>$400</strong> night</p>
+                    
+                    <!-- Split with Friends Button -->
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(4)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <!-- Cost Splitting Calculator (Hidden by default) -->
+                    <div class="cost-split-calculator" id="split-calc-4">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-4">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-4')" class="minus">-</button>
+                                    <input type="number" id="nights-4" value="1" min="1" onchange="calculateSplit(4)">
+                                    <button onclick="incrementValue('nights-4')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-4">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-4')" class="minus">-</button>
+                                    <input type="number" id="friends-4" value="2" min="1" onchange="calculateSplit(4)">
+                                    <button onclick="incrementValue('friends-4')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-4">$200.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card">
+                <div class="listing-images">
+                    <img src="listing5.jpeg" alt="Lakeside Cabin">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Lakeside Cabin</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.87</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">Lake view</p>
+                    <p class="listing-dates">May 10-15</p>
+                    <p class="listing-price"><strong>$225</strong> night</p>
+                    
+                    <!-- Split with Friends Button -->
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(5)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <!-- Cost Splitting Calculator (Hidden by default) -->
+                    <div class="cost-split-calculator" id="split-calc-5">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-5">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-5')" class="minus">-</button>
+                                    <input type="number" id="nights-5" value="1" min="1" onchange="calculateSplit(5)">
+                                    <button onclick="incrementValue('nights-5')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-5">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-5')" class="minus">-</button>
+                                    <input type="number" id="friends-5" value="2" min="1" onchange="calculateSplit(5)">
+                                    <button onclick="incrementValue('friends-5')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-5">$112.50</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card">
+                <div class="listing-images">
+                    <div class="guest-favorite">
+                        <i class="fas fa-heart"></i>
+                        Guest favorite
+                    </div>
+                    <img src="listing6.jpeg" alt="Treehouse Adventure">
+                    <button class="heart-btn"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="listing-info">
+                    <div class="listing-title">
+                        <h3>Treehouse Adventure</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.99</span>
+                        </div>
+                    </div>
+                    <p class="listing-details">Forest view</p>
+                    <p class="listing-dates">Jun 5-10</p>
+                    <p class="listing-price"><strong>$300</strong> night</p>
+                    
+                    <!-- Split with Friends Button -->
+                    <button class="split-toggle-btn" onclick="toggleSplitCalculator(6)">
+                        <i class="fas fa-user-friends"></i>
+                        Split with friends
+                    </button>
+
+                    <!-- Cost Splitting Calculator (Hidden by default) -->
+                    <div class="cost-split-calculator" id="split-calc-6">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="nights-6">Nights</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('nights-6')" class="minus">-</button>
+                                    <input type="number" id="nights-6" value="1" min="1" onchange="calculateSplit(6)">
+                                    <button onclick="incrementValue('nights-6')" class="plus">+</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="friends-6">Friends</label>
+                                <div class="number-input">
+                                    <button onclick="decrementValue('friends-6')" class="minus">-</button>
+                                    <input type="number" id="friends-6" value="2" min="1" onchange="calculateSplit(6)">
+                                    <button onclick="incrementValue('friends-6')" class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-result">
+                            <p>Each person pays:</p>
+                            <h4 id="split-amount-6">$150.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find More Button -->
+        <div class="find-more-container">
+            <button class="find-more-btn">
+                Find more places to stay
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Floating Map Button -->
+    <button class="floating-map-btn">
+        <i class="fas fa-map-marker-alt"></i>
+        Show map
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">AirCover</a></li>
+                    <li><a href="#">Safety information</a></li>
+                    <li><a href="#">Supporting people with disabilities</a></li>
+                    <li><a href="#">Cancellation options</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Airbnb.org: disaster relief housing</a></li>
+                    <li><a href="#">Combating discrimination</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Hosting</h4>
+                <ul>
+                    <li><a href="#">Airbnb your home</a></li>
+                    <li><a href="#">AirCover for Hosts</a></li>
+                    <li><a href="#">Explore hosting resources</a></li>
+                    <li><a href="#">Visit our community forum</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Airbnb</h4>
+                <ul>
+                    <li><a href="#">Newsroom</a></li>
+                    <li><a href="#">Learn about new features</a></li>
+                    <li><a href="#">Letter from our founders</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add JavaScript for cost splitting functionality -->
+    <script>
+        const prices = {
+            1: 250, // Price per night for first listing
+            2: 350,  // Price per night for second listing
+            3: 275,  // Price per night for third listing
+            4: 400,  // Price per night for fourth listing
+            5: 225,  // Price per night for fifth listing
+            6: 300   // Price per night for sixth listing
+        };
+
+        function toggleSplitCalculator(listingId) {
+            const calculator = document.getElementById(`split-calc-${listingId}`);
+            calculator.classList.toggle('visible');
+        }
+
+        function calculateSplit(listingId) {
+            const nights = parseInt(document.getElementById(`nights-${listingId}`).value);
+            const friends = parseInt(document.getElementById(`friends-${listingId}`).value);
+            const pricePerNight = prices[listingId];
+            
+            const totalCost = pricePerNight * nights;
+            const splitAmount = totalCost / friends;
+            
+            document.getElementById(`split-amount-${listingId}`).textContent = 
+                `$${splitAmount.toFixed(2)}`;
+        }
+
+        function incrementValue(inputId) {
+            const input = document.getElementById(inputId);
+            input.value = parseInt(input.value) + 1;
+            const listingId = inputId.split('-')[1];
+            calculateSplit(listingId);
+        }
+
+        function decrementValue(inputId) {
+            const input = document.getElementById(inputId);
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+                const listingId = inputId.split('-')[1];
+                calculateSplit(listingId);
+            }
+        }
+
+        // Initialize calculations
+        window.onload = function() {
+            calculateSplit(1);
+            calculateSplit(2);
+            calculateSplit(3);
+            calculateSplit(4);
+            calculateSplit(5);
+            calculateSplit(6);
+        };
+    </script>
+
+    <!-- Add JavaScript for search bar transformation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.header');
+            const searchWrapper = document.querySelector('.search-wrapper');
+            const expandedSearch = document.querySelector('.search-bar.expanded');
+            const collapsedSearch = document.querySelector('.search-bar.collapsed');
+            
+            let lastScroll = 0;
+            const scrollThreshold = 100;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > scrollThreshold) {
+                    header.classList.add('scrolled');
+                    expandedSearch.classList.add('hide');
+                    collapsedSearch.classList.add('show');
+                } else {
+                    header.classList.remove('scrolled');
+                    expandedSearch.classList.remove('hide');
+                    collapsedSearch.classList.remove('show');
+                }
+                
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+</body>
+</html> 

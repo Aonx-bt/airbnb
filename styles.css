@@ -1,0 +1,918 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 0 80px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1760px;
+    margin: 0 auto;
+}
+
+/* Top Navigation Row */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    gap: 24px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #f7f7f7;
+    color: #FF385C;
+}
+
+.nav-button.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+.nav-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #222222;
+}
+
+.nav-button.active:hover::after {
+    background-color: #FF385C;
+}
+
+/* Right Navigation */
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.host-link {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 22px;
+}
+
+.host-link:hover {
+    background: #f7f7f7;
+}
+
+.globe-btn {
+    padding: 12px;
+    border: none;
+    background: transparent;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+.globe-btn:hover {
+    background: #f7f7f7;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 5px 5px 12px;
+    border: 1px solid #DDDDDD;
+    border-radius: 21px;
+    background: white;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.menu-btn i:last-child {
+    font-size: 30px;
+    color: #717171;
+}
+
+/* Search Row */
+.search-row {
+    padding: 0 0 20px;
+}
+
+/* Search Bar */
+.search-wrapper {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Expanded Search Bar */
+.search-bar.expanded {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 40px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    padding-left: 8px;
+}
+
+.search-bar.expanded:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.search-bar.expanded.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+.search-item {
+    flex: 1;
+    padding: 0 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; /* Allows text truncation */
+}
+
+.search-item:hover {
+    background-color: #EBEBEB;
+    border-radius: 24px;
+}
+
+.search-item.guests {
+    flex: 0.8;
+    padding-right: 0;
+}
+
+.search-label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #222222;
+    margin-bottom: 2px;
+}
+
+.search-text {
+    font-size: 14px;
+    line-height: 18px;
+    color: #717171;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-item input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin-top: -2px;
+}
+
+.search-item input::placeholder {
+    color: #717171;
+}
+
+.search-divider {
+    width: 1px;
+    height: 24px;
+    background-color: #DDDDDD;
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.search-button {
+    background: #FF385C;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: -8px;
+}
+
+.search-button:hover {
+    background: #D70466;
+}
+
+.search-button i {
+    font-size: 12px;
+}
+
+/* Collapsed Search Bar */
+.search-bar.collapsed {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar.collapsed.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1);
+}
+
+.collapsed-content {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 40px;
+    height: 48px;
+    min-width: 300px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    padding-left: 8px;
+}
+
+.search-anywhere,
+.search-week,
+.search-guests {
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    white-space: nowrap;
+}
+
+.search-button-small {
+    background: #FF385C;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: -8px;
+}
+
+.search-button-small:hover {
+    background: #D70466;
+}
+
+.search-button-small i {
+    font-size: 12px;
+}
+
+/* Header transformation */
+.header.scrolled {
+    background: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.header.scrolled .nav-container {
+    height: 80px;
+}
+
+/* Categories Section */
+.categories {
+    display: flex;
+    align-items: center;
+    padding: 20px 80px;
+    gap: 24px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    min-width: 56px;
+}
+
+.category-item.active {
+    border-bottom-color: #222;
+}
+
+.category-item img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.64;
+}
+
+.category-item.active img {
+    opacity: 1;
+}
+
+.category-item span {
+    font-size: 12px;
+    color: #717171;
+}
+
+.category-item.active span {
+    color: #222;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: #222;
+}
+
+/* Listings Grid */
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px 80px;
+}
+
+.listing-card {
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.listing-images {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.listing-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.listing-info {
+    padding: 16px 0;
+}
+
+.listing-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.listing-title h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating i {
+    color: #222;
+}
+
+.listing-details, .listing-dates {
+    color: #717171;
+    margin-bottom: 4px;
+}
+
+.listing-price {
+    margin-top: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #DDDDDD;
+    padding: 48px 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1760px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 16px;
+}
+
+.footer-section ul li a {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1128px) {
+    .header, .categories, .listings-grid, .footer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 950px) {
+    .search-bar.expanded {
+        height: 48px;
+    }
+    
+    .search-label {
+        padding-top: 6px;
+    }
+    
+    .search-text {
+        padding-bottom: 6px;
+    }
+    
+    .search-button {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 744px) {
+    .header, .categories, .listings-grid, .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .nav-container {
+        height: 64px;
+    }
+
+    .search-wrapper {
+        display: none;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Cost Splitting Calculator Styles */
+.cost-split-calculator {
+    display: none;  /* Hidden by default */
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cost-split-calculator.visible {
+    display: block;
+}
+
+.split-toggle-btn {
+    background: transparent;
+    border: none;
+    color: #FF385C;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-top: 12px;
+    padding: 0;
+}
+
+.split-toggle-btn:hover {
+    text-decoration: underline;
+}
+
+.cost-split-calculator {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none;
+    margin-top: 12px;
+    padding: 16px;
+}
+
+.calculator-inputs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.number-input button {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #484848;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+}
+
+.number-input button:hover {
+    background: #eee;
+}
+
+.number-input input {
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    width: 40px;
+}
+
+.number-input input::-webkit-inner-spin-button,
+.number-input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.split-result {
+    border-top: 1px solid #ddd;
+    padding-top: 16px;
+    text-align: center;
+}
+
+.split-result p {
+    color: #717171;
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+.split-result h4 {
+    color: #FF385C;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Categories Navigation */
+.categories-nav {
+    position: relative;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 16px 0;
+}
+
+.categories-container {
+    max-width: 1760px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 16px;
+}
+
+.categories-scroll {
+    display: flex;
+    gap: 32px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex-grow: 1;
+    margin-right: 8px;
+}
+
+.categories-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    min-width: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #717171;
+    font-size: 12px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    width: 56px;
+}
+
+.category-item:hover {
+    color: #222222;
+    border-bottom-color: #DDDDDD;
+}
+
+.category-item.active {
+    color: #222222;
+    border-bottom-color: #222222;
+}
+
+.category-icon {
+    font-size: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.category-item span {
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-scroll-button {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    transform: none;
+}
+
+.nav-scroll-button:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.filters-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #222222;
+    flex-shrink: 0;
+    height: 36px;
+}
+
+.filters-button:hover {
+    border-color: #222222;
+}
+
+.filters-button i {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1128px) {
+    .categories-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 744px) {
+    .categories-container {
+        padding: 0 24px;
+    }
+}
+
+/* Guest Favorite Badge */
+.guest-favorite {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.guest-favorite i {
+    color: #FF385C;
+}
+
+/* Find More Button */
+.find-more-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.find-more-btn {
+    background: linear-gradient(to right, #FF385C, #BD1E59);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.find-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.find-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(189,30,89,0.4);
+}
+
+.find-more-btn:hover::before {
+    left: 100%;
+}
+
+.find-more-btn:active {
+    transform: translateY(0);
+}
+
+/* Floating Map Button */
+.floating-map-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 14px 19px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 100;
+}
+
+.floating-map-btn:hover {
+    transform: scale(1.04);
+    background: #000;
+}
+
+.floating-map-btn i {
+    font-size: 16px;
+} 
